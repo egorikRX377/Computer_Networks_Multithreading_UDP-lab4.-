@@ -54,11 +54,7 @@ void main()
 	dest_addr1.sin_port = htons(1281);
 	dest_addr1.sin_addr.s_addr = inet_addr("127.0.0.1");
 
-	char startMessage;
-
-	cout << "Нажмите любую клавишу чтобы начать!" << endl;
-
-	cin >> startMessage;
+	char startMessage = 'S';
 
 	sendto(s, &startMessage, sizeof(startMessage), 0, (sockaddr*)&dest_addr1, destAddrSize1);
 
